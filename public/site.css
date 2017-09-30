@@ -6,3 +6,12 @@ body {
 p {
 	margin-bottom: 1em;
 }
+
+.content {
+	max-width: 42em;
+	margin: 0 auto;
+}
+
+.block-image__image {
+	max-width: 100%;
+}
