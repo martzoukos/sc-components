@@ -1,5 +1,5 @@
 {
-  "name": "structured-content-components",
+  "name": "sc-components",
   "version": "0.1.0",
   "dependencies": {
     "@frctl/fractal": "^1.1.7"
