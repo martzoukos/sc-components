@@ -2,4 +2,4 @@
 title: Structured Content Components
 ---
 
-This is your index page. You can edit its contents at `docs/01-index.hbs`
+This is a component library for the Structured Content project.
