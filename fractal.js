@@ -29,3 +29,21 @@ fractal.docs.set('path', path.join(__dirname, 'docs'));
  * Tell the Fractal web preview plugin where to look for static assets.
  */
 fractal.web.set('static.path', path.join(__dirname, 'public'));
+
+const hbs = require('@frctl/handlebars')({
+  helpers: {
+  	getYoutubeID: (url) => {
+			const videoID = url.split('v=')[1];
+			const ampersandPosition = videoID.indexOf('&');
+			if (ampersandPosition != -1) {
+			  videoID = videoID.substring(0, ampersandPosition);
+			}
+			return videoID;
+  	}
+  }
+  /* other configuration options here */
+});
+
+fractal.components.engine(hbs); /* set as the default template engine for components */
+
+fractal.docs.engine(hbs); /* you can also use the same instance for documentation, if you like! */
