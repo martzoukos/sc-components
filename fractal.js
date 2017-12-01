@@ -30,6 +30,8 @@ fractal.docs.set('path', path.join(__dirname, 'docs'));
  */
 fractal.web.set('static.path', path.join(__dirname, 'public'));
 
+const markdownHelper = require('helper-markdown');
+
 const hbs = require('@frctl/handlebars')({
   helpers: {
   	getYoutubeID: (url) => {
@@ -39,7 +41,8 @@ const hbs = require('@frctl/handlebars')({
 			  videoID = videoID.substring(0, ampersandPosition);
 			}
 			return videoID;
-  	}
+  	},
+  	markdown: (str) => markdownHelper(str)
   }
   /* other configuration options here */
 });
